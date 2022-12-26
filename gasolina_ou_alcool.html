@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Álcool ou Gasolina</h3>
+
+</body>
+
+<script>
+
+    function pularLinha() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function exibir(frase) {
+        document.write(frase);
+        pularLinha();
+    }
+
+    var tanque = 40;
+
+    var caminhoComGasolina = 480;
+    var consumoDeGasolina = caminhoComGasolina / tanque;
+
+    var caminhoComAlcool = 300;
+    var consumoDeAlcool = caminhoComAlcool / tanque;
+
+    exibir("O consumo de Gasolina é " + consumoDeGasolina + " km/L");
+
+    pularLinha();
+
+    exibir("O consumo de Álcool é " + consumoDeAlcool + " km/L");
+
+</script>
+
+</html>

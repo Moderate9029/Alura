@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advinha Mais!</title>
+</head>
+
+<body>
+    <input />
+    <button>Compare com meu segredo</button>
+</body>
+<script>
+
+    var segredos = [];
+
+    function sorteia() {
+
+        return Math.round(Math.random() * 10);
+    }
+
+    function sorteiaNumero(number) {
+
+        var segredos = [];
+        unidade = 1;
+
+        while (unidade <= number) {
+
+            var numeroAleatorio = sorteia();
+
+            var aux = false;
+
+            if (numeroAleatorio !== 0) {
+
+                for (var i = 0; i < segredos.length; i++) {
+
+                    if (segredos[i] == numeroAleatorio) {
+                        aux = true;
+                        break;
+                    }
+                }
+
+                if (aux == false) {
+
+                    segredos.push(numeroAleatorio);
+                    unidade++;
+                }
+            }
+        }
+
+        return segredos;
+    }
+
+    segredos = sorteiaNumero(4);
+
+    console.log(segredos);
+
+    var input = document.querySelector("input");
+
+    input.focus();
+
+    function verifica() {
+
+        var aux = false;
+
+        for (var i = 0; i < segredos.length; i++) {
+            if (input.value == segredos[i]) {
+
+                aux = true;
+                alert("Você ACERTOU!!!");
+                break;
+            }
+        }
+
+        if (aux == false) { alert("Você ERROU!!!"); }
+
+        input.value = "";
+        input.focus();
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+</script>
+
+</html>

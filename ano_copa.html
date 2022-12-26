@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Anos da Copa</title>
+</head>
+
+
+<body>
+
+</body>
+
+<script>
+    function pularLinha() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function exibir(frase) {
+        document.write(frase);
+        pularLinha();
+    }
+
+    var anoCopa = 1930;
+    const dataAtual = new Date(); const anoAtual = dataAtual.getFullYear();//var anoAtual = 2022;
+    console.log(anoAtual);
+
+    //alert("Teve copa em " + anoCopa);
+
+    while (anoCopa <= anoAtual) {
+        exibir("Teve Copa em " + anoCopa);
+        anoCopa = anoCopa + 4;
+    }
+
+</script>
+
+</html>

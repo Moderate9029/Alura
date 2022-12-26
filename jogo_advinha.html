@@ -1,0 +1,52 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pularLinha() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function exibir(frase) {
+        document.write(frase);
+        pularLinha();
+    }
+
+    function sorteia(n) {
+        return Math.floor(Math.random() * (n - 0 + 1)) + 0;
+    }
+
+    var numeroPensado = sorteia(10);//Math.round(Math.random() * 10);
+
+    console.log(numeroPensado);
+
+    var tentativas = 1;
+
+    while (tentativas <= 3) {
+
+        var chute = parseInt(prompt("Digite seu chute!"));
+
+        if (numeroPensado == chute) {
+
+            exibir("Você acertou!\n O número pensado é " + numeroPensado);
+            break;
+        } else if (tentativas >= 3) {
+
+            exibir("Você errou, o número pensado foi " + numeroPensado);
+
+
+        } else {
+
+            if (chute > numeroPensado) {
+
+                alert("O número que chutou é maior que o número pensado.");
+            } else {
+
+                alert("O número que chutou é menor que o número pensado.");
+            }
+        }
+        tentativas++;
+    }
+
+
+</script>
